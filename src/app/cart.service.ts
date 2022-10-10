@@ -6,6 +6,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CartService {
+// method to get shipping prices to cart
+  getShippingPrices(){
+    return this.http.get<{type:string,price:number}[]>('/assets/shipping.json')
+  }
 
   items: Product[]=[];
 
